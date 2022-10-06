@@ -12,14 +12,15 @@ requirejs.config({
     nodeRequire: require
 });
 
-let host = "";
-let port = "";
+let serverAddress;
 
-requirejs(['config'],
-    function (config) {
-        host = process.env.ENV_VARIABLE.app.host,
-            port = process.env.ENV_VARIABLE.app.port
-    });
+
+require('env-config', function (conf, envConfig) {
+    console.log('The environment is: ', envConfig.env);
+    serverAddress = envConfig;
+});
+
+
 
 // defining the Express app
 const app = express();
@@ -43,7 +44,6 @@ app.use(morgan('combined'));
 
 
 // starting the server
-app.listen(host, port, () => {
+const colonPlace = serverAddress.indexOf(":");
+app.listen(serverAddress.substr(0, colonPlace - 1), serverAddress.substr(colonPlace + 1, serverAddress.lenght), () => {
 });
-
-export default app;
