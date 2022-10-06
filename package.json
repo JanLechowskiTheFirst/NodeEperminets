@@ -1,52 +1,30 @@
 {
   "type": "commonjs",
-  "name": "express-ads-api",
+  "name": "node_proj",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "author": "",
-  "license": "ISC",
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
   "scripts": {
-    "server": "node ./dist-server/bin/www",
-    "clean": "rimraf dist-server && babel ./server --out-dir dist-server",
-    "dev_run": "NODE_ENV=dev_env npm-run-all build server",
-    "test_run": "NODE_ENV=test_env npm-run-all build server",
-    "test": "jest",
-    "watch": "nodemon"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
   },
-  "nodemonConfig": {
-    "exec": "npm run test",
-    "watch": [
-      "server/*",
-      "public/*"
-    ],
-    "ignore": [
-      "**/__tests__/**",
-      "*.test.js",
-      "*.spec.js"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JanLechowskiTheFirst/NodeExperiments.git"
   },
+  "keywords": [],
+  "author": "Jan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JanLechowskiTheFirst/NodeExperiments/issues"
+  },
+  "homepage": "https://github.com/JanLechowskiTheFirst/NodeExperiments#readme",
   "dependencies": {
-    "@babel/cli": "^7.19.3",
-    "@babel/core": "^7.19.3",
-    "@babel/preset-env": "^7.19.3",
-    "body-parser": "^1.20.0",
-    "cors": "^2.8.5",
+    "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "helmet": "^6.0.0",
-    "jest-express": "^1.12.0",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.20",
-    "requirejs": "^2.3.6",
-    "rimraf": "^3.0.2"
+    "requirejs": "^2.3.6"
   },
   "devDependencies": {
-    "jest": "^29.1.2",
-    "npm-run-all": "^4.1.5"
+    "nodemon": "^2.0.20"
   }
 }
