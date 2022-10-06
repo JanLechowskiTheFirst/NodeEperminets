@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require('express')
+const app = express()
 
-const app = express();
+app.set("view engine", "esj")
 
-const testRounter = reqire()
-app.use('tesst', testRounter)
-
+const router = require("./routes/test")
+app.use('/test', router)
 app.listen(3000);
