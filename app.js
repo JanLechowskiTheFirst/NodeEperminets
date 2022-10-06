@@ -1,5 +1,4 @@
 
-import { config } from './'
 
 
 const express = require('express');
@@ -7,6 +6,20 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+var requirejs = require('requirejs');
+
+requirejs.config({
+    nodeRequire: require
+});
+
+let host = "";
+let port = "";
+
+requirejs(['config'],
+    function (config) {
+        host = process.env.ENV_VARIABLE.app.host,
+            port = process.env.ENV_VARIABLE.app.port
+    });
 
 // defining the Express app
 const app = express();
@@ -30,8 +43,7 @@ app.use(morgan('combined'));
 
 
 // starting the server
-app.listen(process.env.ENV_VARIABLE.app.host, process.env.ENV_VARIABLE.app.port, () => {
-    // console.log('listening on port 3000');
+app.listen(host, port, () => {
 });
 
 export default app;
