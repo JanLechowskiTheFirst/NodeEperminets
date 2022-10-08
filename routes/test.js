@@ -1,11 +1,19 @@
 
 const express = require('express')
 const router = express.Router()
+const utils = require('../utils/test');
+
 // first static
 // then dynamic!
 
+//router needs logger -> not console log!!
+
+const mongo = require('../mongoRepo/mongoUsers')
+
+
 router.get("/", (req, res) => {
-    res.json({ test: "done" })
+    console.log("get from mongo")
+    res.send(mongo.run()) // does mongo work well? 
 })
 
 router.post('/', (req, res) => {
