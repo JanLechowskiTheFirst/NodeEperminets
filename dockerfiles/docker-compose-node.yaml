@@ -4,10 +4,10 @@ services:
     build:
       context: /
       dockerfile: node.Dockerfile
-      target: dev
+      target: /
     command: npm run start
     ports:
       - "3000:3000"
     environment:
       NODE_ENV: development
-      DEBUG: nodejs-docker-express:*
+      # DEBUG: nodejs-docker-express:*
