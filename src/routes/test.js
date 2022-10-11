@@ -1,7 +1,7 @@
 
 const express = require('express')
 const router = express.Router()
-const utils = require('../utils/test');
+// const utils = require('../utils/test');
 
 // first static
 // then dynamic!

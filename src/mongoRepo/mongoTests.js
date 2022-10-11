@@ -1,10 +1,13 @@
 
+const mongoClient = require("../../app") // how to later add that to routes?
+
+
 const mongoTest = () => {
     const testSchema = new Schema({
         username: { type: String },
         tests: [
             {
-                _id: false,
+                _id: "1",
                 firstname: { type: String },
             }
         ]

@@ -18,7 +18,6 @@ mongoClient.connect(uri, { useNewUrlParser: true }, (err, database) => {
     require(envConfig.database.defult)(app, database);
 });
 
-
 // how to use logger
 // app.get("/", logger, (req, res) => {
 //     res.render("index", { text: "World" })
@@ -28,7 +27,8 @@ app.use(express.static("public")) // only static, so html, not ej
 app.use(express.urlencoded({ extended: true }))
 app.use(logger)
 
-
+// can this work?
+module.exports = mongoClient
 mongoTest();
 const testRouter = require("./src/routes/test")
 const userRouter = require("./src/routes/user")
@@ -46,3 +46,4 @@ function logger(req, res, next) {
     next()
 }
 app.listen(serverConfig.server.port);
+
