@@ -8,8 +8,6 @@ const router = express.Router()
 
 //router needs logger -> not console log!!
 
-const mongo = require('../mongoRepo/mongoUsers')
-
 
 router.get("/", (req, res) => {
     console.log("get from mongo")

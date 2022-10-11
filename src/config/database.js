@@ -4,7 +4,7 @@ var dbConfig = {
         // url: 'http://my.site.com',
         //mongodb connection settings
         database: {
-            host: '127.0.0.1',
+            host: 'localhost',
             port: '8095',
             db: 'mongo',
             default: '/tests',
@@ -17,7 +17,7 @@ var dbConfig = {
         url: 'http://my.site.com',
         //mongodb connection settings
         database: {
-            host: '127.0.0.1',
+            host: 'localhost',
             port: '8095',
             db: 'mongo',
             default: '/tests',
