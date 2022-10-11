@@ -7,7 +7,7 @@ var dbConfig = {
             host: 'localhost',
             port: '8095',
             db: 'mongo',
-            default: '/tests',
+            default: 'tests',
             username: 'dev',
             password: 'dev'
         },
@@ -20,7 +20,7 @@ var dbConfig = {
             host: 'localhost',
             port: '8095',
             db: 'mongo',
-            default: '/tests',
+            default: 'tests',
             username: 'prod',
             password: 'prod'
         },
