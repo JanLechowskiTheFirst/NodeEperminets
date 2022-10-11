@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 const mongoClient = require("mongodb").MongoClient
-const mongoTest = require("./mongoRepo/mongoTests") // how to later add that to routes?
+const mongoTest = require("./src/mongoRepo/mongoTests") // how to later add that to routes?
 app.set("view engine", "ejs") // only static/a bit dinamic views
 
 
@@ -19,7 +19,7 @@ mongoClient.connect(uri, { useNewUrlParser: true }, (err, database) => {
 });
 
 
-// how to use ogger
+// how to use logger
 // app.get("/", logger, (req, res) => {
 //     res.render("index", { text: "World" })
 // })
@@ -30,8 +30,8 @@ app.use(logger)
 
 
 mongoTest();
-const testRouter = require("./routes/test")
-const userRouter = require("./routes/user")
+const testRouter = require("./src/routes/test")
+const userRouter = require("./src/routes/user")
 
 
 // to use routers + add common roth route to them, works greate, needs module.exports
