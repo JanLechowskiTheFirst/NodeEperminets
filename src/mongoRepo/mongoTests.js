@@ -1,5 +1,6 @@
 
-const mongoClient = require("../../app") // how to later add that to routes?
+const mongoClient = require("mongodb").MongoClient 
+// maybe like this? require from app had problems, but maybe there is way to propagate properly - like router
 
 
 const mongoTest = () => {
