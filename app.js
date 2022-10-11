@@ -9,7 +9,7 @@ app.set("view engine", "ejs") // only static/a bit dinamic views
 
 // config at startup
 var env = process.env.NODE_ENV || 'development'
-var envConfig = require('')[env] // this is greate + you can add env at startup - read how to do it with nodemon (or no nodemon at prod)
+var envConfig = require('./src/config/database')[env] // this is greate + you can add env at startup - read how to do it with nodemon (or no nodemon at prod)
 
 
 const uri = `mongodb+srv://${envConfig.database.username}:${envConfig.database.password}@${envConfig.database.db}}/${envConfig.database.dafault}`
