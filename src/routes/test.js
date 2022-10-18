@@ -2,6 +2,7 @@
 const express = require('express')
 const router = express.Router()
 // const utils = require('../utils/test');
+const mongoClient = require('../app').mongoClient
 
 // first static
 // then dynamic!
@@ -11,7 +12,7 @@ const router = express.Router()
 
 router.get("/", (req, res) => {
     console.log("get from mongo")
-    res.send(mongo.run()) // does mongo work well? 
+    res.send(mongoClient.run()) // does mongo work well? 
 })
 
 router.post('/', (req, res) => {
